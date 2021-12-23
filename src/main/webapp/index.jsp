@@ -74,7 +74,7 @@
       border-radius:10px;
       margin-bottom:40px;
       box-shadow:0px 10px 10px 1px red;
-      transition:all 0.5s ease-in-out;
+      transition:all 0.2s ease-in-out;
     }
     .login-button a:hover{
     color: red;
@@ -107,28 +107,135 @@
     .box2 a:hover{
       color:black; 
     }
-	 
+	.modal-content{
+	   background-color:#282828;
+	   color:white;
+	   border-radius:10px; 
+	}
+	
+	
+	
 </style>
 </head>
 <body>
 		 
 		</head> 
-		<body link="#000" alink="#017bf5" vlink="#000"> 
+		<body > 
+		
 		 <marquee behavior="alternate" scrollamount="10"><h2>"Better to wear a mask than a ventilator."</h2></marquee> 
 		<div class = "box"> 
 		<div class = "box1">  
 		<h1>COVID HELP CENTER</h1> 
 		<div class="button-clicks"> 
-		<button class="login-button " style="margin-right:80px;"><a href="#">User Login</a> 
+		<button class="login-button " class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userLogin" style="margin-right:90px;"><a href="#">User Login</a> 
 		</button> 
-		<button class="login-button"><a href="#">Admin Login</a> 
+		<button class="login-button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#adminLogin" ><a href="#">Admin Login</a> 
 		</button> 
 		</div> 
 		 
 		</div> 
 		<div class = "box2"> 
-		<p>Don't have an account ?<button class="signup-button"><a href="#">Sign Up</a></button></p> 
+		<p>Don't have an account ?<button class="signup-button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signUp"><a href="#">Sign Up</a></button></p> 
 		</div> 
+		</div>
+		
+		
+		
+		
+		
+		<!--UserLogin Modal -->
+		<div class="modal fade" id="userLogin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content" style="font-family: 'Merriweather', serif;">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="staticBackdropLabel" >User login</h5>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		      </div>
+		      <div class="modal-body">
+		      <form class="form" action="#" method="post">
+		      
+		        <div class="form-group m-2">
+		        <label for="email">Email id:</label>
+		         <input type="email" name="email" placeholder="Enter your email" class="form-control" style="font-size:12px; padding:8px;">
+		      </div>
+		        <div class ="form-group m-2">
+		        <label for="pass">Password:</label>
+		        <input type="password" name="pass" placeholder="Enter your password" class="form-control" style="font-size:12px; padding:8px;">
+		        </div>
+		        </form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="submit" class="btn btn-danger">Login</button>
+		        <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
+		<!--Admin Login Modal -->
+		<div class="modal fade" id="adminLogin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content" style="font-family: 'Merriweather', serif;">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="staticBackdropLabel" >Admin login</h5>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		      </div>
+		      <div class="modal-body">
+		      <form class="form" action="#" method="post">
+		      
+		        <div class="form-group m-2">
+		        <label for="email">Email id:</label>
+		         <input type="email" name="email" placeholder="Enter admin email" class="form-control" style="font-size:12px; padding:8px;">
+		      </div>
+		        <div class ="form-group m-2">
+		        <label for="pass">Password:</label>
+		        <input type="password" name="pass" placeholder="Enter admin password" class="form-control" style="font-size:12px; padding:8px;">
+		        </div>
+		        </form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="submit" class="btn btn-danger">Login</button>
+		        <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
+		
+		<!--Signup Modal -->
+		<div class="modal fade" id="signUp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content" style="font-family: 'Merriweather', serif;">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="staticBackdropLabel" >Admin login</h5>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		      </div>
+		      <div class="modal-body">
+		      <form class="form" action="#" method="post">
+		        <div class="form-group m-2">
+		        <label for="username">Username:</label>
+		         <input type="email" name="username" placeholder="Enter admin username" class="form-control" style="font-size:12px; padding:8px;">
+		      </div>
+		        <div class="form-group m-2">
+		        <label for="email">Email id:</label>
+		         <input type="email" name="email" placeholder="Enter admin email" class="form-control" style="font-size:12px; padding:8px;">
+		      </div>
+		        <div class ="form-group m-2">
+		        <label for="pass">Password:</label>
+		        <input type="password" name="pass" placeholder="Enter admin password" class="form-control" style="font-size:12px; padding:8px;">
+		        </div>
+		        <div class ="form-group m-2">
+		        <label for="conpass">Confirm Password:</label>
+		        <input type="password" name="conpass" placeholder="Enter admin password" class="form-control" style="font-size:12px; padding:8px;">
+		        </div>
+		        </form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="submit" class="btn btn-danger">Sign Up</button>
+		        <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
 		</div>
 </body>
 </html>
