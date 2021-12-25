@@ -113,7 +113,10 @@
 	   color:white;
 	   border-radius:10px; 
 	}
-	
+	.alert{
+	    position:absolute;
+	    width:100%;
+	}
 	
 	
 </style>
@@ -123,7 +126,29 @@
 		</head> 
 		<body > 
 		
-		 <marquee behavior="alternate" scrollamount="10"><h2>"Better to wear a mask than a ventilator."</h2></marquee> 
+		 <marquee behavior="alternate" scrollamount="10"><h2>"Better to wear a mask than a ventilator."</h2></marquee>
+		  <!-- Admin sign in -->
+		 <%String mess=(String)request.getAttribute("mess"); %>
+		 
+		 <%if(mess!=null){ %>
+		      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <%=mess %>
+                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+             </div>
+		 <%} %>
+		 
+		  <!-- user sign up --> 
+        <%String mess1=(String)request.getAttribute("mess1"); %>
+		 
+		 <%if(mess1!=null){ %>
+		      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <%=mess1 %>
+                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+             </div>
+		 <%} %>
+		 
+		 
+		 
 		<div class = "box"> 
 		<div class = "box1">  
 		<h1>COVID HELP CENTER</h1> 
@@ -163,12 +188,13 @@
 		        <label for="pass">Password:</label>
 		        <input type="password" name="pass" placeholder="Enter your password" class="form-control" style="font-size:14px; padding:8px;">
 		        </div>
-		        </form>
+		       
 		      </div>
 		      <div class="modal-footer">
 		        <button type="submit" class="btn btn-danger">Login</button>
 		        <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 		      </div>
+		       </form>
 		    </div>
 		  </div>
 		</div>
@@ -182,7 +208,7 @@
 		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		      </div>
 		      <div class="modal-body">
-		      <form class="form" action="#" method="post">
+		      <form class="form" action="adminlogin" method="post">
 		      
 		        <div class="form-group m-2">
 		        <label for="email">Email id:</label>
@@ -192,12 +218,13 @@
 		        <label for="pass">Password:</label>
 		        <input type="password" name="pass" placeholder="Enter admin password" class="form-control" style="font-size:14px; padding:8px;">
 		        </div>
-		        </form>
+		        
 		      </div>
 		      <div class="modal-footer">
 		        <button type="submit" class="btn btn-danger">Login</button>
 		        <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 		      </div>
+		      </form>
 		    </div>
 		  </div>
 		</div>
@@ -212,10 +239,10 @@
 		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		      </div>
 		      <div class="modal-body">
-		      <form class="form" action="#" method="post">
+		      <form class="form" action="UsersSignUp" method="post">
 		        <div class="form-group m-2">
 		        <label for="username">Username:</label>
-		         <input type="email" name="username" placeholder="Choose your username" class="form-control" style="font-size:14px; padding:8px;">
+		         <input type="text" name="username" placeholder="Choose your username" class="form-control" style="font-size:14px; padding:8px;">
 		      </div>
 		        <div class="form-group m-2">
 		        <label for="email">Email id:</label>
@@ -229,12 +256,13 @@
 		        <label for="conpass">Confirm Password:</label>
 		        <input type="password" name="conpass" placeholder="Confirm your password" class="form-control" style="font-size:14px; padding:8px;">
 		        </div>
-		        </form>
+		        
 		      </div>
 		      <div class="modal-footer">
 		        <button type="submit" class="btn btn-danger">Sign Up</button>
 		        <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 		      </div>
+		      </form>
 		    </div>
 		  </div>
 		</div>

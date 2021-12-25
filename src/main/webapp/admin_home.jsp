@@ -145,7 +145,7 @@
      	    </div>
      	   <div class="buttons-section">
      	       <button data-bs-toggle="modal" data-bs-target="#patient_detail">Add details of patients</button>
-     	       <button data-bs-toggle="modal" data-bs-target="#qurantine_detail">Add quaratine details</button>
+     	       <button data-bs-toggle="modal" data-bs-target="#qurantine_detail">Add quaratine patients details</button>
      	       <button data-bs-toggle="modal" data-bs-target="#HealthInspector_detail">Add Health inspector details</button>
      	   </div>
 						
