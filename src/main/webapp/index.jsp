@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Covid help center</title>
+<title>Login-Covid help center</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
@@ -16,6 +16,7 @@
     *{
     margin:0px;
     padding:0px;
+    box-sizing:border-box;
     }
     body{
     height:754px;
@@ -156,11 +157,11 @@
 		      
 		        <div class="form-group m-2">
 		        <label for="email">Email id:</label>
-		         <input type="email" name="email" placeholder="Enter your email" class="form-control" style="font-size:12px; padding:8px;">
+		         <input type="email" name="email" placeholder="Enter your email" class="form-control" style="font-size:14px; padding:8px;">
 		      </div>
 		        <div class ="form-group m-2">
 		        <label for="pass">Password:</label>
-		        <input type="password" name="pass" placeholder="Enter your password" class="form-control" style="font-size:12px; padding:8px;">
+		        <input type="password" name="pass" placeholder="Enter your password" class="form-control" style="font-size:14px; padding:8px;">
 		        </div>
 		        </form>
 		      </div>
@@ -185,11 +186,11 @@
 		      
 		        <div class="form-group m-2">
 		        <label for="email">Email id:</label>
-		         <input type="email" name="email" placeholder="Enter admin email" class="form-control" style="font-size:12px; padding:8px;">
+		         <input type="email" name="email" placeholder="Enter admin email" class="form-control" style="font-size:14px; padding:8px;">
 		      </div>
 		        <div class ="form-group m-2">
 		        <label for="pass">Password:</label>
-		        <input type="password" name="pass" placeholder="Enter admin password" class="form-control" style="font-size:12px; padding:8px;">
+		        <input type="password" name="pass" placeholder="Enter admin password" class="form-control" style="font-size:14px; padding:8px;">
 		        </div>
 		        </form>
 		      </div>
@@ -207,26 +208,26 @@
 		  <div class="modal-dialog">
 		    <div class="modal-content" style="font-family: 'Merriweather', serif;">
 		      <div class="modal-header">
-		        <h5 class="modal-title" id="staticBackdropLabel" >Admin login</h5>
+		        <h5 class="modal-title" id="staticBackdropLabel" >Sign Up</h5>
 		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		      </div>
 		      <div class="modal-body">
 		      <form class="form" action="#" method="post">
 		        <div class="form-group m-2">
 		        <label for="username">Username:</label>
-		         <input type="email" name="username" placeholder="Enter admin username" class="form-control" style="font-size:12px; padding:8px;">
+		         <input type="email" name="username" placeholder="Choose your username" class="form-control" style="font-size:14px; padding:8px;">
 		      </div>
 		        <div class="form-group m-2">
 		        <label for="email">Email id:</label>
-		         <input type="email" name="email" placeholder="Enter admin email" class="form-control" style="font-size:12px; padding:8px;">
+		         <input type="email" name="email" placeholder="Enter your email" class="form-control" style="font-size:14px; padding:8px;">
 		      </div>
 		        <div class ="form-group m-2">
 		        <label for="pass">Password:</label>
-		        <input type="password" name="pass" placeholder="Enter admin password" class="form-control" style="font-size:12px; padding:8px;">
+		        <input type="password" name="pass" placeholder="Enter your password" class="form-control" style="font-size:14px; padding:8px;">
 		        </div>
 		        <div class ="form-group m-2">
 		        <label for="conpass">Confirm Password:</label>
-		        <input type="password" name="conpass" placeholder="Enter admin password" class="form-control" style="font-size:12px; padding:8px;">
+		        <input type="password" name="conpass" placeholder="Confirm your password" class="form-control" style="font-size:14px; padding:8px;">
 		        </div>
 		        </form>
 		      </div>
