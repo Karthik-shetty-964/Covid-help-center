@@ -23,7 +23,7 @@
 	}
  	 body::before{
     content:"";
-    background:url("images/heartbeat.jpg")no-repeat center center/cover;
+    background:url("images/contact.jpg")no-repeat center center/cover;
    
     width:100%;
     height:100%;
@@ -45,6 +45,21 @@
     .navbar ul li a:hover{
     	background-color:white;
     	color:black;
+    }
+    .box{
+       height: 500px;
+       margin-top: 60px;
+       
+    }
+    .left{
+        width:50%;
+        position:absolute;
+        float:left;
+    }
+    .form{
+    	background:rgba(0,0,0,0.2);
+    	border-radius:20px;	
+    	
     }
     
 </style>
@@ -80,32 +95,38 @@
 			</nav>
      	</div>
      	<hr style="color:white; margin:0px;">
-     	
-     	<form class="form col-lg-8 col-sm-12 shadow-lg m-auto text-light" action="#" method="post">
-          
-          <div class="form-group m-3">
-              <label for="name">Name:</label>
-              <input type="text" name="name" placeholder="Enter your name" class="form-control mt-1">
-          </div>
-          <div class="form group m-3">
-						<label for="email">Email</label>
-						<input type="email" name="email" class="form-control mt-1" placeholder="Enter your Email-id">
-					</div>
-					<div class="form group m-3">
-						<label for="contact">Contact</label>
-						<input type="number" name="contact" class="form-control mt-1" placeholder="Contact Number">
-					</div>
-					<div class="form group m-3">
-						<label for="add">Message:</label>
-						<textarea  name="address" class="form-control mt-1" placeholder="Enter your message..."></textarea>
-					</div>
-
-					<div class="mt-4 row justify-content-center   m-3">
-						<button type="submit" class="col-4 btn btn-outline-success m-3">Submit</button>
-						<button type="reset" class="col-4 btn btn-outline-danger m-3">Clear</button>
-					</div>
-       </form>
-     	
+     	<div class="box">
+	     	<div class="left">
+	     	
+		     	<form class="form col-lg-10 col-sm-12 shadow-lg rounded m-auto text-light" action="#" method="post">
+		          <h1 style="text-align:center; font-family:merithwater; font-size:40px;">Contact us</h1>
+		          <div class="form-group m-3">
+		              <label for="name">Name:</label>
+		              <input type="text" name="name" placeholder="Enter your name" class="form-control mt-1">
+		          </div>
+		          <div class="form-group m-3">
+								<label for="email">Email:</label>
+								<input type="email" name="email" class="form-control mt-1" placeholder="Enter your Email-id">
+							</div>
+							<div class="form-group m-3">
+								<label for="contact">Contact:</label>
+								<input type="tel" name="contact" class="form-control mt-1" placeholder="Contact Number">
+							</div>
+							<div class="form-group m-3">
+								<label for="text">Message:</label>
+								<textarea  name="text" class="form-control mt-1" placeholder="Enter your message..."></textarea>
+							</div>
+		
+							<div class="mt-4 row justify-content-center   m-3">
+								<button type="submit" class="col-4 btn btn-outline-info m-3">Submit</button>
+								<button type="reset" class="col-4 btn btn-outline-light m-3">Clear</button>
+							</div>
+		         </form>
+	     	</div>
+	     	<div class="right">
+	     	
+	     	</div>
+     	</div>
      </div>
 </body>
 </html>

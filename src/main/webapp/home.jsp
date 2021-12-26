@@ -20,7 +20,7 @@
 	}
  	 body::before{
     content:"";
-    background:url("images/new1.jpg")no-repeat center center/cover;
+    background:url("images/home3.jpg")no-repeat center center/cover;
    
     width:100%;
     height:100%;
@@ -63,6 +63,12 @@
     	transition:all 0.2s ease-in-out;
     
     }
+    section button a{
+    	text-decoration:none;
+    	color:black;
+    
+    }
+    
     section button:hover{
         transform:scale(1.1);
         background-color:#e1e1e1;
@@ -112,9 +118,9 @@
      	         <h1 style="font-size:70px; font-family: 'Merriweather', serif; margin-bottom:20px; font-weight:bold;">Covid cases near me</h1>
      	    </div>
      	   <div class="buttons-section">
-     	       <button>Patient details</button>
-     	       <button>Home quarantine  details</button>
-     	       <button>Health inspector details</button>
+     	       <button><a href="patient_details.jsp">Patient details</a></button>
+     	       <button><a href="quarantine_details.jsp">Home quarantine  details</a></button>
+     	       <button><a href="inspector_details.jsp">Health inspector details</a></button>
      	   </div>
      	</section>
 	</div>

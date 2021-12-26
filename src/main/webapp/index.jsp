@@ -127,6 +127,17 @@
 		<body > 
 		
 		 <marquee behavior="alternate" scrollamount="10"><h2>"Better to wear a mask than a ventilator."</h2></marquee>
+		 
+		 <!-- User log in -->
+		 <%String mess0=(String)request.getAttribute("mess0"); %>
+		 
+		 <%if(mess0!=null){ %>
+		      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <%=mess0 %>
+                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+             </div>
+		 <%} %>
+		 
 		  <!-- Admin sign in -->
 		 <%String mess=(String)request.getAttribute("mess"); %>
 		 
@@ -178,7 +189,7 @@
 		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		      </div>
 		      <div class="modal-body">
-		      <form class="form" action="#" method="post">
+		      <form class="form" action="UserLogin" method="post">
 		      
 		        <div class="form-group m-2">
 		        <label for="email">Email id:</label>
@@ -194,7 +205,7 @@
 		        <button type="submit" class="btn btn-danger">Login</button>
 		        <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 		      </div>
-		       </form>
+		      </form>
 		    </div>
 		  </div>
 		</div>

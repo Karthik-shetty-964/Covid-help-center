@@ -226,7 +226,7 @@
 								
 								<div class=" row justify-content-center buttons-set ">
 									<button type="submit" class="col-4 btn btn-outline-success ">Enroll</button>
-									<button type="close" class="col-4 btn btn-outline-danger">Close</button>
+									<button type="reset" class="col-4 btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
 								</div>
       				 </form>
 				      </div>
@@ -281,7 +281,7 @@
 								
 								<div class=" row justify-content-center buttons-set ">
 									<button type="submit" class="col-4 btn btn-outline-success ">Enroll</button>
-									<button type="close" class="col-4 btn btn-outline-danger">Close</button>
+									<button type="reset" class="col-4 btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
 								</div>
       				 </form>
 				      </div>
@@ -325,7 +325,7 @@
 								
 								<div class=" row justify-content-center buttons-set ">
 									<button type="submit" class="col-4 btn btn-outline-success ">Enroll</button>
-									<button type="close" class="col-4 btn btn-outline-danger">Close</button>
+									<button type="reset" class="col-4 btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
 								</div>
       				 </form>
 				      </div>
