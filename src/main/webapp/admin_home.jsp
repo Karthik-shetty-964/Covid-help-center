@@ -137,6 +137,36 @@
 			</nav>
      	</div>
      	<hr style="color:white; margin:0px;">
+     	
+     	<!--For patients detail confirmation message  -->
+     	<%String mess1=(String)request.getAttribute("mess1"); %>
+		 
+		 <%if(mess1!=null){ %>
+		      <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <%=mess1 %>
+                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+             </div>
+		 <%} %>
+     	
+     	<!-- For confirmation about home quarantine patients details -->
+     	<%String mess2=(String)request.getAttribute("mess2"); %>
+		 
+		 <%if(mess2!=null){ %>
+		      <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <%=mess2 %>
+                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+             </div>
+		 <%} %>
+		 
+		 <!-- For confirmation about health inspector details -->
+		 <%String mess3=(String)request.getAttribute("mess3"); %>
+		 
+		 <%if(mess3!=null){ %>
+		      <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <%=mess3 %>
+                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+             </div>
+		 <%} %>
      	<div class="main">
    
      	     <div class="heading" >
@@ -158,7 +188,7 @@
 				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				      </div>
 				      <div class="modal-body">
-				       	<form class="form col-lg-8 col-sm-12 shadow-lg  " action="" method="post">
+				       	<form class="form col-lg-8 col-sm-12 shadow-lg  " action="Patients" method="post">
 					          <div class="form-group m-2">
 					              <label for="patient_id" >Patient id:</label>
 					              <input type="number" name="patient_id" placeholder="Enter patient id" class="form-control mt-1">
@@ -187,7 +217,7 @@
 								
 								<div class="form-group m-2">
 									<label for="phone">Phone:</label>
-									<input type="phone" name="phone" class="form-control mt-1" placeholder="Enter patient phone">
+									<input type="number" name="phone" class="form-control mt-1" placeholder="Enter patient phone">
 								</div>
 								<div class="form-group m-2">
 									<label for="pincode">Pincode:</label>
@@ -214,7 +244,7 @@
 				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				      </div>
 				      <div class="modal-body">
-				       	<form class="form col-lg-8 col-sm-12 shadow-lg  " action="" method="post">
+				       	<form class="form col-lg-8 col-sm-12 shadow-lg  " action="Quarantine" method="post">
 					          <div class="form-group m-2">
 					              <label for="person_id" >Person id:</label>
 					              <input type="number" name="person_id" placeholder="Enter person id" class="form-control mt-1">
@@ -232,8 +262,8 @@
 									<input type="date" name="startdate" class="form-control mt-1" >
 								</div>
 								<div class="form-group m-2">
-									<label for="Enddate">End date:</label>
-									<input type="date" name="Enddate" class="form-control mt-1" >
+									<label for="enddate">End date:</label>
+									<input type="date" name="enddate" class="form-control mt-1" >
 								</div>
 								<div class="form-group m-2">
 									<label for="address">Address:</label>
@@ -242,7 +272,7 @@
 								
 								<div class="form-group m-2">
 									<label for="phone">Phone:</label>
-									<input type="phone" name="phone" class="form-control mt-1" placeholder="Enter person phone">
+									<input type="number" name="phone" class="form-control mt-1" placeholder="Enter person phone">
 								</div>
 								<div class="form-group m-2">
 									<label for="pincode">Pincode:</label>
@@ -269,7 +299,7 @@
 				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				      </div>
 				      <div class="modal-body">
-				       	<form class="form col-lg-8 col-sm-12 shadow-lg  " action="" method="post">
+				       	<form class="form col-lg-8 col-sm-12 shadow-lg  " action="Health_inspector" method="post">
 					          <div class="form-group m-2">
 					              <label for="inspector_id" >Inspector id:</label>
 					              <input type="number" name="inspector_id" placeholder="Enter Inspector id" class="form-control mt-1">
@@ -286,7 +316,7 @@
 								
 								<div class="form-group m-2">
 									<label for="off_phone">Office_Phone:</label>
-									<input type="phone" name="off_phone" class="form-control mt-1" placeholder="Enter office phone">
+									<input type="number" name="off_phone" class="form-control mt-1" placeholder="Enter office phone">
 								</div>
 								<div class="form-group m-2">
 									<label for="pincode">Pincode:</label>
