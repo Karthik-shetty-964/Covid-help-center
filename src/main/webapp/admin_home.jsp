@@ -123,7 +123,7 @@
        <div class="row nav-bar">
      	   <nav class="navbar navbar-expand-lg   sticky-top">
 			 <div class="container-fluid ">
-     	       <a href="#" class="navbar-brand"><img src="images/logo.jpg" alt="logo" class="col-lg-3 col-sm-6 " style="width:100px; height:100px;" ></a>
+     	       <a href="#" class="navbar-brand"><img src="images/about3.png" alt="logo" class="col-lg-3 col-sm-6 " style="width:100px; height:100px;" ></a>
 			    <a class="navbar-brand m-1" style="font-family: 'Merriweather', serif; font-weight:bold; font-size:22px; color:white;" href="#">Covid Help Center</a>
 			    <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			      <span class="navbar-toggler-icon"></span>
