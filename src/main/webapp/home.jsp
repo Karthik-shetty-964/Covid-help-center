@@ -74,14 +74,50 @@
         background-color:#e1e1e1;
     }
     
-    
-    
-    
-    
+    .user_profile{
+         color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin: 18px 10px 10px 10px;
+    background:rgba(0,0,0,0.4);
+    border-radius:20px;
+         
+    }
+    .user_profile img{
+     	 width:50px;
+     	 height:50px;
+     	 border:2px solid black;
+     	 border-radius:100%;
+     	 transition:all 0.2s ease-in-out;
+     	 
+    }
+    .user_profile .name{
+         margin: 3px;
+        font-family: merithwater;
+        /* font-weight: bold; */
+         font-size: 20px;
+         padding:5px 10px;
+       
+    }
+    .user_profile:hover{
+       
+        background-color:#6a6a6a66;
+    }
+    .user_profile img:hover{
+    	transform:scale(1.2);
+    }
     
 </style>
 </head>
 <body>
+    <%    
+         String name=(String)session.getAttribute("user");
+         if(name!=null&&name.length()!=0){{
+        	 session.setAttribute("username",name);
+         }
+    %>
 	<div class="container-fluid">
 	    <div class="row nav-bar">
      	   <nav class="navbar navbar-expand-lg   sticky-top">
@@ -103,7 +139,7 @@
 			          <a class="nav-link btn btn-outline-light badge-pill px-4" href="contact.jsp">Contact us</a>
 			        </li>
 			         <li class="nav-item  mx-4">
-			          <a class="nav-link btn btn-outline-light badge-pill px-4" href="index.jsp">Logout</a>
+			          <a class="nav-link btn btn-outline-light badge-pill px-4" href="logout.jsp">Logout</a>
 			        </li>
 			         
 			      </ul>
@@ -112,7 +148,15 @@
 			</nav>
      	</div>
      	<hr style="color:white; margin:0px;">
-     	
+     	 <div class="user_profile">
+     	     <div class="logo">
+     	        
+     	        <img alt="user" src="images/user2.png" >
+     	     </div>
+     	     <div class="name">
+     	         <%=name %>
+     	     </div>
+     	 </div>
      	<section class="main" >
      	     <div class="heading" >
      	         <h1 style="font-size:70px; font-family: 'Merriweather', serif; margin-bottom:20px; font-weight:bold;">Covid cases near me</h1>
@@ -120,9 +164,14 @@
      	   <div class="buttons-section">
      	       <button><a href="patient_details.jsp">Patient details</a></button>
      	       <button><a href="quarantine_details.jsp">Home quarantine  details</a></button>
-     	       <button><a href="inspector_details.jsp">Health inspector details</a></button>
+     	       <button><a href="health_inspector_details.jsp">Health inspector details</a></button>
      	   </div>
      	</section>
 	</div>
+	<%
+         }else{
+        	 response.sendRedirect("index.jsp");
+         }
+	%>
 </body>
 </html>

@@ -1,14 +1,11 @@
 <%@page import="java.sql.*" %>
-
-<%@page import="java.util.List"%>
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Patients-Covid Help Center</title>
+<title>Health inspector-Covid Help Center</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
@@ -162,8 +159,8 @@
 </head>
 
 <body>
-   <%
-   String name=(String)session.getAttribute("username");
+<%
+     String name=(String)session.getAttribute("username");
      if(session.getAttribute("username")!=null){
    
    %>
@@ -197,12 +194,12 @@
      	         <%=name %>
      	     </div>
      	 </div>
-     	 <h1 style="text-align:center; font-family:merithwater; font-weight:35px; color:white;">Patient details</h1>
+     	 <h1 style="text-align:center; font-family:merithwater; font-weight:35px; color:white;">Health Inspector details</h1>
      	<div class="row1">
      	   <div class="box">
      	   
      		  <p>Search here</p>
-     		  <form action="patient_details.jsp" method="post">
+     		  <form action="health_inspector_details.jsp" method="post">
      		  
 	     	      <input type="text" name="search" placeholder="Enter pincode"> 
 	     	      <button type="submit">search</button>
@@ -216,14 +213,13 @@
 			    <table class="col-lg-8 col-10 col-sm-12 table  p-3 shadow-lg">
 				  <thead class="thead">
 					 <tr>
-						<th >Patient id</th><th>Patient Name</th>
-						<th>Age</th><th>Condition</th><th>Address</th><th>Phone</th>
-						 <th>Pincode</th>
+						<th >Inspector id</th><th>Inspector Name</th>
+						<th>Office address</th><th>Office phone</th><th>Pincode</th>
+						 
 					 </tr>
 				  </thead>
 				  <tbody class="tbody" >
-				       
-					<%
+				  <%
      	  				 String pin=request.getParameter("search");
      	  				// System.out.println(pin);
      	  				 
@@ -231,48 +227,51 @@
      	  				 Statement st=null;
      	  				 ResultSet rs=null;
      	  				
-     	  				if(pin!=null){ 
+     	  				if(pin!=null){
      	  				 try{
      	  					Class.forName("com.mysql.cj.jdbc.Driver");
      	  					Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/chc","root","root123");
      	  					st=con.createStatement();
      	  					
-     	  					
-     	  					 String qry="select * from patients where pincode="+pin+"";
-     	  					 
+     	  					 String qry="select * from health_inspector where pincode="+pin+"";
      	  					 rs=st.executeQuery(qry);
-     	  					
-     	  		            // System.out.println(rs.wasNull());
-     	  		            if(rs.next()==false){
-     	  		     %>
-     	  		            	<tr><p style="color:white; text-align:center">No records currently available for the pincode <%=pin %></p></tr>
-     	  		     <%
-     	  		            }else{
-     	  					 do{
+     	  					 
+     	  			      if(rs.next()==false){
+     	       	   %>
+     	       	  		          <tr><p style="color:white; text-align:center">No records currently available for the pincode <%=pin %></p></tr>
+     	       	  	<%
+     	       	  		   }else{
+     	       	  			 do{
      	  			 %>
      	  					<tr>
      							<td><%=rs.getInt(1) %></td><<td><%=rs.getString(2) %></td>
-     							<td><%=rs.getInt(3) %></td><td><%=rs.getString(4) %></td>
-     							<td><%=rs.getString(5) %></td><td><%=rs.getString(6) %></td><td><%=rs.getInt(7) %></td>
+     							<td><%=rs.getString(3) %></td><td><%=rs.getString(4) %></td>
+     							<td><%=rs.getInt(5) %></td>
      						</tr>
-     			   <%
-     	  					 }while(rs.next());
-     	  		            }
-     	  				  }catch(Exception ex){
-     	  					  System.out.println("Error: "+ex.getMessage());
-     	  				  }
+     				<%
+     	       	  				}while(rs.next());
+     	     	  		     }
+     	  				  }catch(Exception ex){}
      	  				}
      				%>
+     				
+     			    
+     	  			</tbody>
+     	  	</table>
+				  
+				       
 					
-				  </tbody>
-			    </table>
+					
+				
+					
+				
 			
 			
 		     </div>
 	     </div>
 	     </div>
      </div>
-      <%
+     <%
      }else{
     	 response.sendRedirect("index.jsp");
      }

@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class adminlogin
@@ -41,6 +42,8 @@ public class adminlogin extends HttpServlet {
 		String pass=request.getParameter("pass");
 		
 		if(email.equals("admin@gmail.com") && pass.equals("admin123")) {
+			HttpSession session =request.getSession();
+			session.setAttribute("admin",email);
 			RequestDispatcher dispatch=request.getRequestDispatcher("admin_home.jsp");
 			request.setAttribute("mess", "Success Login");
 			dispatch.forward(request,response);

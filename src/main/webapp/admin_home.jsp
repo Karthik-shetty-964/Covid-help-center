@@ -116,6 +116,9 @@
 </style>
 </head>
 <body>
+ <%
+ 	if(session.getAttribute("admin")!=null){
+ %>
     <div class="container-fluid">
        <div class="row nav-bar">
      	   <nav class="navbar navbar-expand-lg   sticky-top">
@@ -128,7 +131,7 @@
 			    <div class="collapse navbar-collapse " id="navbarNav">
 			      <ul class="navbar-nav ms-auto ">
 			         <li class="nav-item  mx-4">
-			          <a class="nav-link btn btn-outline-light badge-pill px-4" href="index.jsp">Logout</a>
+			          <a class="nav-link btn btn-outline-light badge-pill px-4" href="logout.jsp">Logout</a>
 			        </li>
 			         
 			      </ul>
@@ -335,5 +338,10 @@
 				</div>
      	</div>
      </div>
+     <%
+ 	}else{
+ 		response.sendRedirect("index.jsp");
+ 	}
+     %>
 </body>
 </html>

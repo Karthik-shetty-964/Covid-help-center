@@ -23,7 +23,7 @@
 	}
  	 body::before{
     content:"";
-    background:url("images/about2.jpg")no-repeat center center/cover;
+    background:url("images/home.jpg")no-repeat center center/cover;
    
     width:100%;
     height:100%;
@@ -46,58 +46,55 @@
     	background-color:white;
     	color:black;
     }
+   .user_profile{
+        
+         color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin: 18px 10px 10px 10px;
+    background:rgba(0,0,0,0.4);
+    border-radius:20px;
+  
+         
+    }
+    .user_profile img{
+     	 width:50px;
+     	 height:50px;
+     	 border:2px solid black;
+     	 border-radius:100%;
+     	 transition:all 0.2s ease-in-out;
+     	 
+    }
+    .user_profile .name{
+         margin: 3px;
+        font-family: merithwater;
+        /* font-weight: bold; */
+         font-size: 20px;
+         padding:5px 10px;
+       
+    }
+    .user_profile:hover{
+       
+        background-color:#24242466;
+    }
+    .user_profile img:hover{
+    	transform:scale(1.2);
+    }
     
-    .Our_mission{
-       /* background-color:rgba(255,255,255,0.6);*/
-        font-family: 'Merriweather', serif;
-        width:80%;
-        color:white;
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        margin:10px;
-        padding:10px;
-        border-top-right-radius:20px;
-        border-bottom-left-radius:20px;
-        
-    }
-    .Our_mission p{
-       font-family: 'Merriweather', serif;
-       font-size:22px;
-       text-align:center;
-    }
-    .Our_mission .box{
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        background-color:rgba(255,255,255,0.6);
-        border-top-right-radius:20px;
-        border-bottom-left-radius:20px;
-        padding:2px;
-    }
-    .Our_mission .box img{
-        width:300px;
-        height:300px;
-        border-radius:100%;
-        
-        
-        
-    }
-    .main{
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-    }
-    .boxes{
-       display:grid;
-       width:80%;
-       grid-template-columns:repeat(3,1fr);
-    }
 </style>
 </head>
 <body>
+   <%
+     String name=(String)session.getAttribute("username");
+     if(session.getAttribute("username")!=null){
+   
+   %>
+    <%
+      // String sessionName=(String)session.getAttribute("username");
+       //out.print("<h1>"+sessionName+"</h1>");
+    %>
      <div class="container-fluid">
        <div class="row nav-bar">
      	   <nav class="navbar navbar-expand-lg   sticky-top">
@@ -119,7 +116,7 @@
 			          <a class="nav-link btn btn-outline-light badge-pill px-4" href="contact.jsp">Contact us</a>
 			        </li>
 			         <li class="nav-item  mx-4">
-			          <a class="nav-link btn btn-outline-light badge-pill px-4" href="index.jsp">Logout</a>
+			          <a class="nav-link btn btn-outline-light badge-pill px-4" href="logout.jsp">Logout</a>
 			        </li>
 			         
 			      </ul>
@@ -128,38 +125,21 @@
 			</nav>
      	</div>
      	<hr style="color:white; margin:0px;">
-     	<div class="main">     	
-	     	<div class="Our_mission">
-	     	    
-	     	     <h1>Our Mission</h1>
-	     	     <p style="font-family: 'Vujahday Script', cursive; font-size:30px;">"Since covid started, our mission has been to help others to be aware of covid infected patients."</p>
-	     	     <div class="box" >
-	     	     <img alt="img1" src="images/about1.jpg">
-	     	     <p >Surviving through pandemic is not easy,there is a sudden rise of covid cases in India because of people coming in contact with covid patients unknowingly.Our company make sure that we help people by providing the details of covid affected patients near by and we make sure that they are safe and protected.</p>
-	     	     </div>
-	     	</div>
-	     	<div class="get_to_know">
-	     	<h1>Get to know us</h1>
-	     	<hr size="10" style="color:white; margin:0px;"> 
-	     	<div class="boxes">
-	     	
-	     	 <div class="box1">
-	     	  <img alt="career" src="images/goal.png">
-	     	  <p>We take great pride in our company leadership position, thanks to the hardwork of our increditable talent.</p>
-	     	 </div>
-	     	 <div class="box2">
-	     	  <img alt="career" src="images/goal.png">
-	     	  <p>We take great pride in our company leadership position, thanks to the hardwork of our increditable talent.</p>
-	     	 </div>
-	     	 <div class="box3">
-	     	  <img alt="career" src="images/goal.png">
-	     	  <p>We take great pride in our company leadership position, thanks to the hardwork of our increditable talent.</p>
-	     	 </div>
-	     	</div>
-	     	</div>
-	     	
-     	</div>
+     	 <div class="user_profile">
+     	     <div class="logo">
+     	        
+     	        <img alt="user" src="images/user2.png" >
+     	     </div>
+     	     <div class="name">
+     	         <%=name %>
+     	     </div>
+     	 </div>
      	
      </div>
+     <%
+     }else{
+    	 response.sendRedirect("index.jsp");
+     }
+      %>
 </body>
 </html>

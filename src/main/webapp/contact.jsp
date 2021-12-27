@@ -1,3 +1,5 @@
+<%@page import="javax.mail.*" %>
+<%@page import="javax.mail.internet.*" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -59,12 +61,57 @@
     .form{
     	background:rgba(0,0,0,0.2);
     	border-radius:20px;	
+    	margin-top:20px;
     	
+    }
+    .m-auto{
+            margin: 36px auto !important;
+    }
+        .user_profile{
+        
+         color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin: 18px 10px 10px 10px;
+    background:rgba(0,0,0,0.4);
+    border-radius:20px;
+  
+         
+    }
+    .user_profile img{
+     	 width:50px;
+     	 height:50px;
+     	 border:2px solid black;
+     	 border-radius:100%;
+     	 transition:all 0.2s ease-in-out;
+     	 
+    }
+    .user_profile .name{
+         margin: 3px;
+        font-family: merithwater;
+        /* font-weight: bold; */
+         font-size: 20px;
+         padding:5px 10px;
+       
+    }
+    .user_profile:hover{
+       
+        background-color:#24242466;
+    }
+    .user_profile img:hover{
+    	transform:scale(1.2);
     }
     
 </style>
 </head>
 <body>
+  <%
+     String name=(String)session.getAttribute("username");
+     if(session.getAttribute("username")!=null){
+   
+   %>
 	<div class="container-fluid">
        <div class="row nav-bar">
      	   <nav class="navbar navbar-expand-lg   sticky-top">
@@ -86,7 +133,7 @@
 			          <a class="nav-link active btn btn-outline-light badge-pill px-4" href="contact.jsp">Contact us</a>
 			        </li>
 			         <li class="nav-item  mx-4">
-			          <a class="nav-link btn btn-outline-light badge-pill px-4" href="index.jsp">Logout</a>
+			          <a class="nav-link btn btn-outline-light badge-pill px-4" href="logout.jsp">Logout</a>
 			        </li>
 			         
 			      </ul>
@@ -95,10 +142,20 @@
 			</nav>
      	</div>
      	<hr style="color:white; margin:0px;">
+     	
+     	<div class="user_profile">
+     	     <div class="logo">
+     	        
+     	        <img alt="user" src="images/user2.png" >
+     	     </div>
+     	     <div class="name">
+     	         <%=name %>
+     	     </div>
+     	 </div>
      	<div class="box">
 	     	<div class="left">
 	     	
-		     	<form class="form col-lg-10 col-sm-12 shadow-lg rounded m-auto text-light" action="#" method="post">
+		     	<form class="form col-lg-10 col-sm-12 shadow-lg rounded m-auto text-light" action="notify.jsp" method="post">
 		          <h1 style="text-align:center; font-family:merithwater; font-size:40px;">Contact us</h1>
 		          <div class="form-group m-3">
 		              <label for="name">Name:</label>
@@ -121,12 +178,29 @@
 								<button type="submit" class="col-4 btn btn-outline-info m-3">Submit</button>
 								<button type="reset" class="col-4 btn btn-outline-light m-3">Clear</button>
 							</div>
+							
+							<%
+							
+							String mess=(String)session.getAttribute("mess");
+							System.out.println(mess);
+							if(mess!=null){
+						
+		                      out.print("<p style='text-align:center;font-size:20px;'>"+mess+" </p>");
+		                    } 
+		                    
+		                    %>
 		         </form>
+		         
 	     	</div>
 	     	<div class="right">
 	     	
 	     	</div>
      	</div>
      </div>
+     <%
+     }else{
+    	 response.sendRedirect("index.jsp");
+     }
+      %>
 </body>
 </html>

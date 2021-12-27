@@ -2,6 +2,7 @@ package chc;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -55,7 +56,11 @@ public class UserLogin extends HttpServlet {
 			if (UsersDao.validate(users)) {
 				//HttpSession session = request.getSession();
 				// session.setAttribute("username",username);
-				response.sendRedirect("home.jsp");
+				
+					HttpSession session=request.getSession();
+					session.setAttribute("user",email);
+					response.sendRedirect("home.jsp");
+				
 			} else {
 				HttpSession session = request.getSession();
 				//session.setAttribute("user", username);
