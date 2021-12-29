@@ -119,6 +119,7 @@
         font-family: 'Merriweather', serif;
        font-size:22px;
        text-align:center;
+       
     }
      .box img{
         width:300px;
@@ -134,13 +135,15 @@
        flex-direction:column;
        justify-content:center;
        align-items:center;
-       margin-left:40px; 
+       margin-left:40px;
+       
     }
     .get_to_know::before{
         	
     content:"";
     background:url("images/.jpg")no-repeat center center/cover;
     background-color: #365d7f;
+   
     width:100%;
     height:100%;
     position:absolute;
@@ -172,11 +175,13 @@
     }
     .boxes .box1{
         display: flex;
-        background: rgba(0,0,0,0.4);
+        background: rgba(250,250,250,0.4);
+        border-radius:20px;
         flex-direction:column;
         justify-content: center;
           align-items: center;
            padding:20px;
+           
     }
     .boxes .box1 img{
       width: 130px;
@@ -187,7 +192,58 @@
        font-family: inherit;
        width:90%;
        text-align:center;
+       color:black;
+       font-weight:bold;
     }
+    .contact_us{
+      display:flex;
+          margin-top: 36px;
+    }
+    .contact_us img{
+        width: 30px;
+        height: 30px;
+        
+    }
+    .contact_us h1{
+	    color: black;
+	    margin-left: 103px;
+	    font-family: emoji;
+	    padding: 14px 0px 2px 0px;
+	    text-decoration: underline;
+    }
+    .contact_us .icons{
+        display:flex;
+        flex-direction:column;
+           margin: 20px;
+       line-height: 2;
+        
+    }.contact_us .icons2{
+        display:flex;
+        justify-content:center;
+        margin-left: 103px;
+        
+    }
+    .contact_us::before{
+        content:"";
+  		 background:url("images/bottom-about.jpg")no-repeat center center/cover;
+   		 width:100%;
+   		height:300px;
+    	position:absolute;
+    	top:10;
+    	left:0;
+   	    z-index:-1;
+    }
+    .contact_us .icons .icon{
+        display:flex;
+         
+    }
+    .contact_us .icons2 .icon{
+        display:flex;
+         transition:all 0.2s ease-in-out;
+    }
+     .contact_us .icons2 .icon:hover{
+          transform:scale(1.2);
+     }
 </style>
 </head>
 <body>
@@ -266,15 +322,65 @@
 	     	 <div class="box1 shadow-lg">
 	     	  <img alt="career" src="images/management.png">
 	     	  <h5 style="text-decoration:underline;">Management</h5>
-	     	  <p>We take great pride in our company leadership position, thanks to the hardwork of our increditable talent.</p>
+	     	  <p>A key to achieving success is to assemble strong and stable management team, and we have the top one.</p>
 	     	 </div>
 	     	 <div class="box1 shadow-lg">
 	     	  <img alt="career" src="images/press-release.png">
 	     	  <h5 style="text-decoration:underline;">Press release</h5>
-	     	  <p>We take great pride in our company leadership position, thanks to the hardwork of our increditable talent.</p>
+	     	  <p>The key to sucess of any press release lies with contents ability to grab the readers attention each and every time.</p>
 	     	 </div>
 	     	</div>
 	     	</div>
+	     	
+	     <div class="contact_us">
+	     	<div class="left" style="border-right:2px solid black;">
+	     	
+	     	  <div>
+	     	    <h1 >Reach us</h1>
+	     	  </div>
+	     	  <div class="icons" >
+	     	    <div class="icon">
+	     	      <img alt="location" src="images/phone-call.png"><p style="margin-left: 13px; color:black;">1-800-123-4567</p>
+	     	    </div>
+	     	    <div class="icon">
+	     	      <img alt="mail" src="images/mail.png"><p style="margin-left: 13px; color:black;">covidhelpcenter@gmail.com</p>
+	     	    </div>
+	     	    <div class="icon">
+	     	      <img alt="location" src="images/location.png"><p style="margin-left: 13px; color:black;">Mangalore institute of technology and engineering,Moodbidri</p>
+	     	    </div>
+	     	  </div>
+	     	</div>
+	     	  <div class="right">
+	     	  
+	     	   <div>
+	     	    <h1 style="color: black;
+	                       margin-left:100px;
+	                       font-family: emoji;
+	                      
+	                       text-decoration: underline;">Connect with us</h1>
+	     	  
+	     	  </div>
+	     	    <div class="icons2">
+	     	    <div class="icon">
+	     	      <a href="https://www.instagram.com/shetty_apekshaa/" target="_black"><img alt="location" src="images/instagram.png" style="margin:5px 10px;"></a>
+	     	    </div>
+	     	    <div class="icon">
+	     	      <a href=" https://www.linkedin.com/in/karthik-shetty-7980b1223/" target="_black"><img alt="mail" src="images/linkedin-logo.png" style="margin:5px 10px;"></a>
+	     	    </div>
+	     	    <div class="icon">
+	     	      <a href=" https://twitter.com/Karthik_shtty" target="_black"><img alt="location" src="images/twitter.png" style="margin:5px 10px;"></a>
+	     	    </div>
+	     	    <div class="icon">
+	     	      <a href="https://www.google.com" target="_black"><img alt="location" src="images/google-brands.svg" style="margin:5px 10px;"></a>
+	     	    </div>
+	     	    <div class="icon">
+	     	      <a href="https://www.facebook.com/karthik.sshetty.5030" target="_black"><img alt="location" src="images/facebook-brands.svg" style="margin:5px 10px;"></a>
+	     	    </div>
+	     	  </div>
+	     	  </div> 
+	     </div> 
+	     	  
+	     </div>
      </div>
      <%
      }else{
