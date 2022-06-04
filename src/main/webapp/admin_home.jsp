@@ -116,9 +116,7 @@
 </style>
 </head>
 <body>
- <%
- 	if(session.getAttribute("admin")!=null){
- %>
+ 
     <div class="container-fluid">
        <div class="row nav-bar">
      	   <nav class="navbar navbar-expand-lg   sticky-top">
@@ -338,10 +336,7 @@
 				</div>
      	</div>
      </div>
-     <%
- 	}else{
- 		response.sendRedirect("index.jsp");
- 	}
-     %>
+     
+ 	
 </body>
 </html>
